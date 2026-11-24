@@ -4,6 +4,8 @@
 
 不用任何框架、不用打包工具，一个 `index.html` 双击就能玩。
 
+🎮 **在线试玩**：<https://yfwwwwww.github.io/thunder-fighter/>
+
 ![开始界面](screenshots/01-start.png)
 
 ## 玩法
