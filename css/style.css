@@ -1,0 +1,146 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: radial-gradient(circle at 50% 0%, #1b2a4a 0%, #0a0f1c 55%, #05070d 100%);
+    font-family: "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+    color: #e8f2ff;
+    overflow: hidden;
+    user-select: none;
+}
+
+.game-wrap {
+    position: relative;
+    flex: none;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(120, 180, 255, 0.18);
+}
+
+canvas {
+    display: block;
+    /* 画布内部分辨率固定 480x720，显示时按比例缩放到窗口大小 */
+    width: auto;
+    height: auto;
+    max-width: 100vw;
+    max-height: 100vh;
+    touch-action: none;
+}
+
+/* 顶部状态栏 */
+.hud {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 14px 16px;
+    font-size: 14px;
+    color: #9fc4ea;
+    pointer-events: none;
+}
+
+.hud b {
+    color: #ffffff;
+    font-size: 16px;
+    margin-left: 4px;
+}
+
+#lives {
+    color: #ff6b7a;
+    letter-spacing: 2px;
+    font-size: 16px;
+}
+
+/* 开始 / 结束遮罩 */
+.overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    background: rgba(6, 12, 24, 0.78);
+    backdrop-filter: blur(3px);
+    text-align: center;
+    padding: 24px;
+}
+
+.overlay.hide {
+    display: none;
+}
+
+.overlay h1 {
+    font-size: 40px;
+    letter-spacing: 6px;
+    color: #7ee0ff;
+    text-shadow: 0 0 18px rgba(94, 200, 255, 0.6);
+}
+
+.overlay .sub {
+    font-size: 14px;
+    color: #b6cbe4;
+    line-height: 1.8;
+}
+
+.overlay .tips {
+    font-size: 12px;
+    color: #6f8bab;
+    margin-top: 6px;
+}
+
+button {
+    margin-top: 10px;
+    padding: 12px 38px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    color: #041018;
+    background: linear-gradient(180deg, #8ce9ff, #35b6e0);
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(53, 182, 224, 0.45);
+    transition: transform 0.12s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* 暂停提示 */
+.pause-tip {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px 22px;
+    border-radius: 10px;
+    background: rgba(6, 12, 24, 0.85);
+    border: 1px solid rgba(126, 224, 255, 0.35);
+    color: #7ee0ff;
+    font-size: 14px;
+    display: none;
+}
+
+.pause-tip.show {
+    display: block;
+}
+
+@media (max-width: 520px) {
+    .game-wrap {
+        border-radius: 0;
+    }
+}

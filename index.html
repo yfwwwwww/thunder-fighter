@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>雷霆战机 · 网页小游戏</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="game-wrap">
+    <canvas id="game" width="480" height="720"></canvas>
+
+    <div class="hud">
+        <div class="hud-item">分数 <b id="score">0</b></div>
+        <div class="hud-item">最高 <b id="best">0</b></div>
+        <div class="hud-item" id="lives">♥♥♥</div>
+    </div>
+
+    <div class="overlay" id="overlay">
+        <h1 id="ovTitle">雷霆战机</h1>
+        <p class="sub" id="ovSub">方向键 / WASD 移动，空格射击</p>
+        <button id="startBtn">开始游戏</button>
+        <p class="tips" id="ovTips">手机可以直接按住屏幕拖动飞机 · P 键暂停</p>
+    </div>
+
+    <div class="pause-tip" id="pauseTip">已暂停，按 P 继续</div>
+</div>
+
+<script src="js/game.js"></script>
+</body>
+</html>
